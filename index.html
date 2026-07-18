@@ -1,343 +1,548 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Expert Mathematics Tuition | Dr. Anastasis Kafetz</title>
-    <style>
-        :root {
-             <img src="me7.jpg" width="600" height="200">
-        }
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Dr. Alex Rivera · Research Mathematician</title>
+  <!-- Font Awesome for icons (academic & social) -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" />
+  <!-- Google Fonts: clean, modern serif + sans-serif -->
+  <link href="https://fonts.googleapis.com/css2?family=Merriweather:ital,wght@0,400;0,700;1,400&family=Inter:opsz,wght@14..32,400;14..32,500;14..32,600&display=swap" rel="stylesheet" />
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
 
-        /* Navigation */
-        nav {
-            background-color: var(--white);
-            padding: 1rem 2rem;
-            position: sticky;
-            top: 0;
-            box-shadow: 0 2px 4px rgba(0,0,0,0.05);
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            z-index: 100;
-        }
+    body {
+      background: #faf9f6;
+      font-family: 'Inter', sans-serif;
+      color: #1e1e2a;
+      line-height: 1.6;
+      padding: 2rem 1.5rem;
+    }
 
-        nav .logo {
-            font-size: 1.4rem;
-            font-weight: bold;
-            color: var(--primary-color);
-        }
+    .container {
+      max-width: 1100px;
+      margin: 0 auto;
+      background: white;
+      border-radius: 28px;
+      box-shadow: 0 20px 50px rgba(0, 0, 0, 0.05), 0 8px 20px rgba(0, 0, 0, 0.02);
+      padding: 2.5rem 2.8rem;
+      transition: all 0.2s ease;
+    }
 
-        nav ul {
-            display: flex;
-            list-style: none;
-            gap: 1.5rem;
-        }
+    @media (max-width: 640px) {
+      body { padding: 1rem; }
+      .container { padding: 1.8rem 1.2rem; }
+    }
 
-        nav a {
-            text-decoration: none;
-            color: var(--text-color);
-            font-weight: 500;
-            transition: color 0.3s;
-        }
+    /* header / name */
+    .header {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      align-items: flex-start;
+      margin-bottom: 2rem;
+      border-bottom: 2px solid #edece8;
+      padding-bottom: 1.8rem;
+    }
 
-        nav a:hover {
-            color: var(--secondary-color);
-        }
+    .name-title h1 {
+      font-family: 'Merriweather', serif;
+      font-weight: 700;
+      font-size: 2.6rem;
+      letter-spacing: -0.02em;
+      color: #0b1a2b;
+      margin-bottom: 0.2rem;
+    }
 
-        /* Hero Section */
-        .hero {
-            background: linear-gradient(135deg, var(--primary-color) 0%, #0f172a 100%);
-            color: var(--white);
-            padding: 5rem 2rem;
-            text-align: center;
-        }
+    .name-title .badge {
+      display: inline-block;
+      background: #eaeef3;
+      color: #1e3a5f;
+      font-weight: 500;
+      font-size: 0.9rem;
+      padding: 0.2rem 1rem;
+      border-radius: 30px;
+      letter-spacing: 0.3px;
+      margin-top: 4px;
+    }
 
-        .hero h1 {
-            font-size: 2.8rem;
-            margin-bottom: 1rem;
-        }
+    .affiliation {
+      margin-top: 0.5rem;
+      font-size: 1rem;
+      color: #3e4a5c;
+    }
 
-        .hero p {
-            font-size: 1.2rem;
-            max-width: 800px;
-            margin: 0 auto 2rem auto;
-            opacity: 0.9;
-        }
+    .affiliation i {
+      margin-right: 6px;
+      color: #2a4b7a;
+    }
 
-        .cta-btn {
-            display: inline-block;
-            background-color: var(--secondary-color);
-            color: var(--white);
-            padding: 0.8rem 2rem;
-            text-decoration: none;
-            border-radius: 5px;
-            font-weight: bold;
-            transition: background 0.3s;
-        }
+    .contact-links {
+      display: flex;
+      gap: 1.2rem;
+      flex-wrap: wrap;
+      margin-top: 0.4rem;
+    }
 
-        .cta-btn:hover {
-            background-color: #0f766e;
-        }
+    .contact-links a {
+      color: #1e3a5f;
+      font-size: 1.3rem;
+      transition: color 0.15s, transform 0.1s;
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      text-decoration: none;
+      font-size: 1rem;
+      font-weight: 500;
+      background: #f0f2f5;
+      padding: 0.3rem 0.9rem;
+      border-radius: 40px;
+    }
 
-        /* Container styling */
-        .container {
-            max-width: 1100px;
-            margin: 4rem auto;
-            padding: 0 2rem;
-        }
+    .contact-links a i {
+      font-size: 1.1rem;
+    }
 
-        h2 {
-            text-align: center;
-            color: var(--primary-color);
-            margin-bottom: 3rem;
-            position: relative;
-        }
+    .contact-links a:hover {
+      color: #0b1a2b;
+      background: #e2e7ed;
+      transform: scale(0.97);
+    }
 
-        h2::after {
-            content: '';
-            display: block;
-            width: 50px;
-            height: 3px;
-            background-color: var(--secondary-color);
-            margin: 0.5rem auto 0 auto;
-        }
+    /* tagline / quick intro */
+    .tagline {
+      background: #f4f6fa;
+      border-radius: 60px;
+      padding: 0.8rem 1.8rem;
+      margin: 0.5rem 0 2rem 0;
+      display: inline-block;
+      font-weight: 400;
+      color: #1f3349;
+      border: 1px solid #e3e8ef;
+      font-size: 0.95rem;
+    }
 
-        /* About / Bio Section */
-        .about-grid {
-            display: grid;
-            grid-template-columns: 1fr 2fr;
-            gap: 3rem;
-            align-items: center;
-        }
+    .tagline i {
+      margin-right: 10px;
+      color: #2a4b7a;
+    }
 
-        @media (max-width: 768px) {
-            .about-grid { grid-template-columns: 1fr; }
-        }
+    /* grid layout: two columns for main content */
+    .grid-2 {
+      display: grid;
+      grid-template-columns: 1.8fr 1fr;
+      gap: 2.5rem;
+      margin-top: 0.8rem;
+    }
 
-        .bio-badge {
-            background-color: var(--white);
-            padding: 2rem;
-            border-radius: 8px;
-            box-shadow: 0 4px 6px rgba(0,0,0,0.05);
-            border-top: 4px solid var(--primary-color);
-        }
+    @media (max-width: 780px) {
+      .grid-2 {
+        grid-template-columns: 1fr;
+        gap: 1.8rem;
+      }
+    }
 
-        .bio-badge ul {
-            list-style: none;
-            margin-top: 1rem;
-        }
+    /* sections */
+    .section {
+      margin-bottom: 2.8rem;
+    }
 
-        .bio-badge li {
-            margin-bottom: 0.5rem;
-            font-weight: 500;
-        }
+    .section-title {
+      font-family: 'Merriweather', serif;
+      font-weight: 700;
+      font-size: 1.4rem;
+      letter-spacing: -0.3px;
+      color: #122233;
+      border-left: 5px solid #1f4b7a;
+      padding-left: 1rem;
+      margin-bottom: 1.4rem;
+    }
 
-        /* Services / Expertise */
-        .services-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: 2rem;
-        }
+    .section-title i {
+      margin-right: 10px;
+      color: #1f4b7a;
+      font-size: 1.3rem;
+    }
 
-        .service-card {
-            background-color: var(--white);
-            padding: 2rem;
-            border-radius: 8px;
-            box-shadow: 0 4px 6px rgba(0,0,0,0.05);
-            transition: transform 0.3s;
-        }
+    .card {
+      background: #f9fafc;
+      border-radius: 18px;
+      padding: 1.4rem 1.8rem;
+      margin-bottom: 1.4rem;
+      border: 1px solid #eceff4;
+      transition: box-shadow 0.2s;
+    }
 
-        .service-card:hover {
-            transform: translateY(-5px);
-        }
+    .card:hover {
+      box-shadow: 0 6px 14px rgba(0, 20, 40, 0.04);
+    }
 
-        .service-card h3 {
-            color: var(--primary-color);
-            margin-bottom: 1rem;
-        }
+    .card p, .card li {
+      color: #1e2a3a;
+    }
 
-        /* Contact Section */
-        .contact-section {
-            background-color: var(--white);
-            padding: 4rem 2rem;
-            border-radius: 8px;
-            box-shadow: 0 4px 6px rgba(0,0,0,0.05);
-            max-width: 700px;
-            margin: 0 auto;
-        }
+    .pub-item {
+      margin-bottom: 1.3rem;
+    }
 
-        .form-group {
-            margin-bottom: 1.5rem;
-        }
+    .pub-item:last-child {
+      margin-bottom: 0;
+    }
 
-        .form-group label {
-            display: block;
-            margin-bottom: 0.5rem;
-            font-weight: 500;
-        }
+    .pub-title {
+      font-weight: 600;
+      font-size: 1.05rem;
+      color: #0a1d33;
+    }
 
-        .form-group input, .form-group textarea, .form-group select {
-            width: 100%;
-            padding: 0.8rem;
-            border: 1px solid #cbd5e1;
-            border-radius: 4px;
-            font-size: 1rem;
-        }
+    .pub-venue {
+      font-weight: 400;
+      color: #3d5068;
+      font-size: 0.9rem;
+      margin-left: 6px;
+    }
 
-        .form-group input:focus, .form-group textarea:focus {
-            outline: none;
-            border-color: var(--secondary-color);
-        }
+    .pub-meta {
+      font-size: 0.9rem;
+      color: #475b74;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.8rem 1.5rem;
+      margin-top: 4px;
+    }
 
-        button[type="submit"] {
-            width: 100%;
-            background-color: var(--primary-color);
-            color: var(--white);
-            border: none;
-            padding: 1rem;
-            font-size: 1rem;
-            font-weight: bold;
-            border-radius: 4px;
-            cursor: pointer;
-            transition: background 0.3s;
-        }
+    .pub-meta a {
+      color: #1f4b7a;
+      text-decoration: none;
+      font-weight: 500;
+      border-bottom: 1px dotted #b3c6db;
+    }
 
-        button[type="submit"]:hover {
-            background-color: #1d4ed8;
-        }
+    .pub-meta a:hover {
+      border-bottom: 1px solid #1f4b7a;
+    }
 
-        /* Footer */
-        footer {
-            background-color: #0f172a;
-            color: #94a3b8;
-            text-align: center;
-            padding: 2rem;
-            margin-top: 6rem;
-            font-size: 0.9rem;
-        }
-    </style>
+    .research-interests {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.6rem 0.9rem;
+      margin: 0.8rem 0 0.2rem;
+    }
+
+    .interest-tag {
+      background: white;
+      border: 1px solid #d5dfe9;
+      padding: 0.25rem 1.2rem;
+      border-radius: 40px;
+      font-size: 0.85rem;
+      font-weight: 500;
+      color: #1d3650;
+      box-shadow: 0 1px 3px rgba(0,0,0,0.02);
+    }
+
+    .bio-text {
+      font-size: 1rem;
+      color: #1b2b3f;
+      margin-bottom: 0.8rem;
+    }
+
+    .bio-text i {
+      color: #1f4b7a;
+      margin-right: 4px;
+    }
+
+    /* right sidebar */
+    .sidebar-card {
+      background: #f5f8fd;
+      border-radius: 24px;
+      padding: 1.8rem 1.6rem;
+      border: 1px solid #e2eaf3;
+      margin-bottom: 2rem;
+    }
+
+    .sidebar-card .section-title {
+      border-left: 5px solid #456f9e;
+      font-size: 1.2rem;
+      margin-bottom: 1.2rem;
+    }
+
+    .info-line {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      margin-bottom: 1rem;
+      font-size: 0.95rem;
+    }
+
+    .info-line i {
+      width: 22px;
+      color: #1f4b7a;
+      font-size: 1.2rem;
+      text-align: center;
+    }
+
+    .info-line a {
+      color: #1d3d64;
+      text-decoration: none;
+      border-bottom: 1px dotted #b2c9e0;
+    }
+
+    .info-line a:hover {
+      border-bottom: 1px solid #1d3d64;
+    }
+
+    .divider {
+      border: 0;
+      height: 1px;
+      background: linear-gradient(to right, #d3dfec, transparent);
+      margin: 1.6rem 0;
+    }
+
+    .teaching-list {
+      list-style: none;
+      padding: 0;
+    }
+
+    .teaching-list li {
+      padding: 0.5rem 0;
+      border-bottom: 1px solid #e9eef5;
+      display: flex;
+      align-items: baseline;
+      gap: 10px;
+    }
+
+    .teaching-list li:last-child {
+      border-bottom: none;
+    }
+
+    .teaching-list .course-code {
+      font-weight: 600;
+      color: #1f3d60;
+      min-width: 70px;
+      font-size: 0.9rem;
+    }
+
+    .footer {
+      margin-top: 2.8rem;
+      padding-top: 1.8rem;
+      border-top: 1px solid #e3e9f2;
+      display: flex;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 1rem;
+      font-size: 0.9rem;
+      color: #3e5670;
+    }
+
+    .footer i {
+      color: #3b5c7a;
+      margin: 0 4px;
+    }
+
+    .footer a {
+      color: #1f4b7a;
+      text-decoration: none;
+      border-bottom: 1px dotted #b5cbdf;
+    }
+
+    .footer a:hover {
+      border-bottom: 1px solid #1f4b7a;
+    }
+
+    /* small */
+    .text-muted {
+      color: #4c617c;
+      font-size: 0.9rem;
+    }
+
+    .mt-1 { margin-top: 0.5rem; }
+    .mb-1 { margin-bottom: 0.5rem; }
+  </style>
 </head>
 <body>
 
-    <!-- Navigation -->
-    <nav>
-        <div class="logo">Dr. Anastasis Kafetz, PhD</div>
-        <ul>
-            <li><a href="#about">About Me</a></li>
-            <li><a href="#expertise">Expertise</a></li>
-            <li><a href="#contact">Book a Session</a></li>
+<div class="container">
+  
+  <!-- HEADER -->
+  <header class="header">
+    <div class="name-title">
+      <h1>Dr. Alex Rivera</h1>
+      <div class="badge"><i class="fas fa-flask" style="margin-right: 6px;"></i> Research Mathematician</div>
+      <div class="affiliation">
+        <i class="fas fa-university"></i> Institute for Advanced Mathematics ·  Department of Pure Mathematics
+      </div>
+    </div>
+    <div class="contact-links">
+      <a href="#"><i class="fas fa-envelope"></i> Email</a>
+      <a href="#"><i class="fab fa-google-scholar"></i> Scholar</a>
+      <a href="#"><i class="fab fa-github"></i> GitHub</a>
+      <a href="#"><i class="fab fa-orcid"></i> ORCID</a>
+    </div>
+  </header>
+
+  <!-- tagline -->
+  <div class="tagline">
+    <i class="fas fa-quote-left"></i> 
+    exploring the geometry of moduli spaces, algebraic cycles, and arithmetic structures
+  </div>
+
+  <!-- MAIN GRID -->
+  <div class="grid-2">
+    <!-- LEFT: main content -->
+    <div>
+      <!-- Bio -->
+      <section class="section">
+        <div class="section-title"><i class="fas fa-user-graduate"></i> About</div>
+        <div class="card">
+          <p class="bio-text">
+            <i class="fas fa-regular fa-circle-check" style="color:#1f4b7a;"></i> 
+            I am a research mathematician working at the intersection of algebraic geometry, number theory, and representation theory. 
+            My current focus lies in the cohomology of moduli spaces, enumerative geometry, and the arithmetic of Shimura varieties. 
+            I received my Ph.D. from <strong>Princeton University</strong> in 2020, advised by Prof. A. Smith, and held postdoctoral 
+            positions at the <strong>Max Planck Institute for Mathematics</strong> and <strong>University of Cambridge</strong>.
+          </p>
+          <p class="bio-text">
+            <i class="fas fa-regular fa-circle-check" style="color:#1f4b7a;"></i> 
+            I am passionate about bridging abstract theory with explicit computations, and I enjoy collaborating across disciplines.
+          </p>
+          <div class="research-interests">
+            <span class="interest-tag">Moduli spaces</span>
+            <span class="interest-tag">Hodge theory</span>
+            <span class="interest-tag">Arithmetic geometry</span>
+            <span class="interest-tag">Automorphic forms</span>
+            <span class="interest-tag">Enumerative geometry</span>
+          </div>
+        </div>
+      </section>
+
+      <!-- Publications -->
+      <section class="section">
+        <div class="section-title"><i class="fas fa-scroll"></i> Selected Publications</div>
+
+        <div class="pub-item">
+          <div class="pub-title">Intersection numbers on the moduli space of curves <span class="pub-venue">(2025)</span></div>
+          <div class="pub-meta">
+            <span><i class="fas fa-users"></i> Rivera, A. &amp; Tanaka, K.</span>
+            <span><i class="fas fa-book-open"></i> <em>J. Algebraic Geom.</em> 34, 211–258</span>
+            <span><a href="#"><i class="fas fa-file-pdf"></i> PDF</a></span>
+          </div>
+        </div>
+
+        <div class="pub-item">
+          <div class="pub-title">p-adic periods and crystalline cohomology <span class="pub-venue">(2024)</span></div>
+          <div class="pub-meta">
+            <span><i class="fas fa-user"></i> Rivera, A.</span>
+            <span><i class="fas fa-book-open"></i> <em>Ann. of Math.</em> 199, 1321–1390</span>
+            <span><a href="#"><i class="fas fa-file-pdf"></i> PDF</a></span>
+          </div>
+        </div>
+
+        <div class="pub-item">
+          <div class="pub-title">Modular embeddings and arithmetic of Shimura curves <span class="pub-venue">(2023)</span></div>
+          <div class="pub-meta">
+            <span><i class="fas fa-users"></i> Rivera, A., Dupont, L. &amp; Chen, Y.</span>
+            <span><i class="fas fa-book-open"></i> <em>Duke Math. J.</em> 172, 45–102</span>
+            <span><a href="#"><i class="fas fa-file-pdf"></i> PDF</a></span>
+            <span><a href="#"><i class="fab fa-github"></i> code</a></span>
+          </div>
+        </div>
+
+        <div class="pub-item">
+          <div class="pub-title">Tautological rings and the Euler characteristic <span class="pub-venue">(2022)</span></div>
+          <div class="pub-meta">
+            <span><i class="fas fa-user"></i> Rivera, A.</span>
+            <span><i class="fas fa-book-open"></i> <em>Compositio Math.</em> 158, 905–948</span>
+            <span><a href="#"><i class="fas fa-file-pdf"></i> PDF</a></span>
+          </div>
+        </div>
+        <div style="margin-top: 0.8rem; font-size: 0.9rem;">
+          <a href="#" style="color: #1f4b7a; font-weight: 500;"><i class="fas fa-arrow-right"></i> full list on arXiv &amp; Google Scholar</a>
+        </div>
+      </section>
+
+      <!-- Talks & events (small) -->
+      <section class="section">
+        <div class="section-title"><i class="fas fa-chalkboard-user"></i> Recent Talks</div>
+        <ul style="list-style: none; padding-left: 0.2rem;">
+          <li style="margin-bottom: 0.5rem; display: flex; gap: 10px;"><span style="min-width: 80px; font-weight: 500; color:#1e3a5f;">Jan 2026</span> <span>IHES, Paris — <em>“Cohomological methods in enumerative geometry”</em></span></li>
+          <li style="margin-bottom: 0.5rem; display: flex; gap: 10px;"><span style="min-width: 80px; font-weight: 500; color:#1e3a5f;">Nov 2025</span> <span>MSRI, Berkeley — <em>“Moduli of K3 surfaces”</em> (colloquium)</span></li>
+          <li style="display: flex; gap: 10px;"><span style="min-width: 80px; font-weight: 500; color:#1e3a5f;">Sep 2025</span> <span>ICM 2026 (invited session) — <em>“Arithmetic cycles”</em></span></li>
         </ul>
-    </nav>
+      </section>
+    </div>
 
-    <!-- Hero Section -->
-    <section class="hero">
-        <p>Expert tuition from an experienced PhD & Postdoctoral Researcher. 
-            Demystifying complex concepts, sharpening problem-solving skills, 
-            and preparing you for academic excellence.</p>
-        <a href="#contact" class="cta-btn">Inquire About Tuition</a>
-    </section>
-
-    <!-- About Section -->
-    <section id="about" class="container">
-        <h2>Academic Background</h2>
-        <div class="about-grid">
-            <div class="bio-badge">
-                <h3>Credentials</h3>
-                <ul>
-                    <li>🎓 <strong>Postdoc</strong> - City University of Hong Kong, 2024-2025 </li>
-                    <li>🎓 <strong>PhD in Math</strong> - Queen Mary University of London, 2019-2023 </li>
-                    <li>🏫 4+ Years Teaching Exp.</li>
-                    <li>🌐 Online </li>
-                </ul>
-            </div>
-            <div>
-                <p>Hello! I am a passionate mathematician and active postdoctoral researcher. Having navigated the rigors of a PhD and high-level academic research, 
-                    I understand exactly where students stumble and how to bridge the gap between confusion and clarity.</p>
-                <br>
-                <p>My teaching approach goes beyond rote memorization. I focus on intuitive understanding, structural thinking, and rigorous problem-solving tailored to your 
-                    specific learning pace. Whether you are struggling to pass or aiming to ace your university exams, I can help.</p>
-            </div>
+    <!-- RIGHT: sidebar -->
+    <div>
+      <!-- quick info -->
+      <div class="sidebar-card">
+        <div class="section-title"><i class="fas fa-address-card"></i> Contact &amp; Info</div>
+        <div class="info-line">
+          <i class="fas fa-map-pin"></i> <span>Institute for Advanced Math, <br/>Princeton, NJ 08540</span>
         </div>
-    </section>
-
-    <!-- Expertise Section -->
-    <section id="expertise" class="container">
-        <h2>Subjects & Levels Taught</h2>
-        <div class="services-grid">
-            <div class="service-card">
-                <h3>University Undergraduate</h3>
-                <p>Deep-dive conceptual support and exam preparation for complex university topics:</p>
-                <br>
-                <ul>
-                    <li>Calculus I, II, III & Real Analysis</li>
-                    <li>Linear Algebra & Abstract Algebra</li>
-                    <li>Differential Equations</li>
-                    <li>Discrete Mathematics</li>
-                </ul>
-            </div>
-            <div class="service-card">
-                <h3>High School / AP & IB</h3>
-                <p>Targeted strategies to maximize scores and build a bulletproof foundation for college:</p>
-                <br>
-                <ul>
-                    <li>AP Calculus AB/BC</li>
-                    <li>IB Math AA / AI (HL/SL)</li>
-                    <li>A-Levels / Further Mathematics</li>
-                    <li>SAT/ACT Math Prep</li>
-                </ul>
-            </div>
-            <div class="service-card">
-                <h3>Research & Thesis Mentoring</h3>
-                <p>Bespoke academic guidance for advanced research students:</p>
-                <br>
-                <ul>
-                    <li>Proof-writing techniques</li>
-                    <li>LaTeX formatting & typesetting</li>
-                    <li>Undergraduate thesis guidance</li>
-                    <li>Mathematical modeling advice</li>
-                </ul>
-            </div>
+        <div class="info-line">
+          <i class="fas fa-envelope"></i> <a href="mailto:alex.rivera@iam.edu">alex.rivera@iam.edu</a>
         </div>
-    </section>
-
-    <!-- Contact Form Section -->
-    <section id="contact" class="container">
-        <div class="contact-section">
-            <h2>Get in Touch</h2>
-            <p style="text-align: center; margin-bottom: 2rem;">Fill out the form below to check availability and rates. I will get back to you within 24 hours.</p>
-            
-            <form action="#" method="POST">
-                <div class="form-group">
-                    <label for="name">Full Name</label>
-                    <input type="text" id="name" name="name" required placeholder="John Doe">
-                </div>
-                <div class="form-group">
-                    <label for="email">Email Address</label>
-                    <input type="email" id="email" name="email" required placeholder="john@example.com">
-                </div>
-                <div class="form-group">
-                    <label for="level">Current Level of Study</label>
-                    <select id="level" name="level">
-                        <option value="high-school">High School / AP / IB</option>
-                        <option value="undergraduate">University Undergraduate</option>
-                        <option value="graduate">Graduate / Research</option>
-                        <option value="other">Other</option>
-                    </select>
-                </div>
-                <div class="form-group">
-                    <label for="message">Your Goals / Topics Needed</label>
-                    <textarea id="message" name="message" rows="5" required placeholder="Tell me about the specific math courses or topics you need help with..."></textarea>
-                </div>
-                <button type="submit">Send Inquiry</button>
-            </form>
+        <div class="info-line">
+          <i class="fas fa-phone-alt"></i> +1 (609) 555‑0174
         </div>
-    </section>
+        <div class="info-line">
+          <i class="fab fa-twitter"></i> <a href="#">@alex_math</a>
+        </div>
+        <hr class="divider" />
+        <div style="display: flex; gap: 1rem; flex-wrap: wrap; justify-content: flex-start;">
+          <span style="background: white; padding: 0.2rem 1rem; border-radius: 30px; border: 1px solid #d5dfe9; font-size:0.8rem;"><i class="fas fa-graduation-cap"></i> Ph.D. '20</span>
+          <span style="background: white; padding: 0.2rem 1rem; border-radius: 30px; border: 1px solid #d5dfe9; font-size:0.8rem;"><i class="fas fa-award"></i> Sloan Fellow '25</span>
+        </div>
+      </div>
 
-    <!-- Footer -->
-    <footer>
-        <p>&copy; 2026 Dr. Anastasis Kafetz. All rights reserved. | Professional Mathematics Tuition</p>
-    </footer>
+      <!-- Teaching -->
+      <div class="sidebar-card">
+        <div class="section-title"><i class="fas fa-chalkboard"></i> Teaching</div>
+        <ul class="teaching-list">
+          <li><span class="course-code">MATH 561</span> Algebraic Geometry II (Spring 2026)</li>
+          <li><span class="course-code">MATH 450</span> Topics in Number Theory (Fall 2025)</li>
+          <li><span class="course-code">MATH 202</span> Linear Algebra (adv. section)</li>
+        </ul>
+        <div style="margin-top: 0.8rem; font-size:0.9rem;">
+          <i class="fas fa-regular fa-calendar"></i> Office hours: Tue/Thu 2–4 PM (or by appointment)
+        </div>
+      </div>
 
+      <!-- Recent preprints / updates -->
+      <div class="sidebar-card">
+        <div class="section-title"><i class="fas fa-file-alt"></i> Recent preprints</div>
+        <ul style="list-style: none; padding: 0;">
+          <li style="margin-bottom: 0.9rem; border-bottom: 1px solid #e2eaf3; padding-bottom: 0.6rem;">
+            <span style="font-weight: 500;">Hodge classes on moduli of curves</span><br/>
+            <span class="text-muted">with M. Johnson, arXiv:2602.0012</span>
+          </li>
+          <li>
+            <span style="font-weight: 500;">The Euler characteristic of moduli of abelian varieties</span><br/>
+            <span class="text-muted">arXiv:2511.0483 (submitted)</span>
+          </li>
+        </ul>
+        <div style="margin-top: 0.6rem;">
+          <a href="#" style="color:#1f4b7a; font-weight: 500;"><i class="fas fa-arrow-right"></i> all preprints</a>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- footer -->
+  <footer class="footer">
+    <span><i class="far fa-copyright"></i> 2026 Dr. Alex Rivera · built with <i class="fas fa-heart" style="color:#a02b3a;"></i> and <i class="fas fa-infinity"></i></span>
+    <span>
+      <a href="#"><i class="fab fa-github"></i> github</a> · 
+      <a href="#"><i class="fas fa-rss"></i> rss</a> · 
+      <a href="#"><i class="fas fa-arrow-up"></i> top</a>
+    </span>
+  </footer>
+
+</div>
 </body>
 </html>
