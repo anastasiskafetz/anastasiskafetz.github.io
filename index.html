@@ -1,548 +1,194 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Dr. Alex Rivera · Research Mathematician</title>
-  <!-- Font Awesome for icons (academic & social) -->
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" />
-  <!-- Google Fonts: clean, modern serif + sans-serif -->
-  <link href="https://fonts.googleapis.com/css2?family=Merriweather:ital,wght@0,400;0,700;1,400&family=Inter:opsz,wght@14..32,400;14..32,500;14..32,600&display=swap" rel="stylesheet" />
-  <style>
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-    }
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Brown & Blue Minimalist Concept</title>
+    <style>
+        /* Color Palette & Reset */
+        :root {
+            --deep-blue: #1A365D;
+            --sky-blue: #EBF8FF;
+            --accent-blue: #3182CE;
+            --dark-brown: #4A3728;
+            --warm-tan: #D69E2E;
+            --cream: #FAF5FF;
+        }
 
-    body {
-      background: #faf9f6;
-      font-family: 'Inter', sans-serif;
-      color: #1e1e2a;
-      line-height: 1.6;
-      padding: 2rem 1.5rem;
-    }
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+        }
 
-    .container {
-      max-width: 1100px;
-      margin: 0 auto;
-      background: white;
-      border-radius: 28px;
-      box-shadow: 0 20px 50px rgba(0, 0, 0, 0.05), 0 8px 20px rgba(0, 0, 0, 0.02);
-      padding: 2.5rem 2.8rem;
-      transition: all 0.2s ease;
-    }
+        body {
+            background-color: var(--cream);
+            color: var(--dark-brown);
+            line-height: 1.6;
+        }
 
-    @media (max-width: 640px) {
-      body { padding: 1rem; }
-      .container { padding: 1.8rem 1.2rem; }
-    }
+        /* Navigation Style */
+        header {
+            background-color: var(--deep-blue);
+            padding: 1rem 2rem;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+        }
 
-    /* header / name */
-    .header {
-      display: flex;
-      flex-wrap: wrap;
-      justify-content: space-between;
-      align-items: flex-start;
-      margin-bottom: 2rem;
-      border-bottom: 2px solid #edece8;
-      padding-bottom: 1.8rem;
-    }
+        .nav-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
 
-    .name-title h1 {
-      font-family: 'Merriweather', serif;
-      font-weight: 700;
-      font-size: 2.6rem;
-      letter-spacing: -0.02em;
-      color: #0b1a2b;
-      margin-bottom: 0.2rem;
-    }
+        .logo {
+            color: var(--sky-blue);
+            font-size: 1.5rem;
+            font-weight: bold;
+            text-decoration: none;
+        }
 
-    .name-title .badge {
-      display: inline-block;
-      background: #eaeef3;
-      color: #1e3a5f;
-      font-weight: 500;
-      font-size: 0.9rem;
-      padding: 0.2rem 1rem;
-      border-radius: 30px;
-      letter-spacing: 0.3px;
-      margin-top: 4px;
-    }
+        .logo span {
+            color: var(--warm-tan);
+        }
 
-    .affiliation {
-      margin-top: 0.5rem;
-      font-size: 1rem;
-      color: #3e4a5c;
-    }
+        .nav-menu {
+            display: flex;
+            list-style: none;
+            gap: 2rem;
+        }
 
-    .affiliation i {
-      margin-right: 6px;
-      color: #2a4b7a;
-    }
+        .nav-item a {
+            color: var(--sky-blue);
+            text-decoration: none;
+            font-weight: 500;
+            transition: color 0.3s ease;
+        }
 
-    .contact-links {
-      display: flex;
-      gap: 1.2rem;
-      flex-wrap: wrap;
-      margin-top: 0.4rem;
-    }
+        .nav-item a:hover {
+            color: var(--warm-tan);
+        }
 
-    .contact-links a {
-      color: #1e3a5f;
-      font-size: 1.3rem;
-      transition: color 0.15s, transform 0.1s;
-      display: inline-flex;
-      align-items: center;
-      gap: 6px;
-      text-decoration: none;
-      font-size: 1rem;
-      font-weight: 500;
-      background: #f0f2f5;
-      padding: 0.3rem 0.9rem;
-      border-radius: 40px;
-    }
+        /* Hero / Main Image Section */
+        .hero {
+            position: relative;
+            height: 70vh;
+            min-height: 450px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            overflow: hidden;
+        }
 
-    .contact-links a i {
-      font-size: 1.1rem;
-    }
+        .hero-image {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            z-index: -2;
+        }
 
-    .contact-links a:hover {
-      color: #0b1a2b;
-      background: #e2e7ed;
-      transform: scale(0.97);
-    }
+        /* Overlay to blend the image with the blue/brown theme */
+        .hero-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(135deg, rgba(26, 54, 93, 0.85) 0%, rgba(74, 55, 40, 0.75) 100%);
+            z-index: -1;
+        }
 
-    /* tagline / quick intro */
-    .tagline {
-      background: #f4f6fa;
-      border-radius: 60px;
-      padding: 0.8rem 1.8rem;
-      margin: 0.5rem 0 2rem 0;
-      display: inline-block;
-      font-weight: 400;
-      color: #1f3349;
-      border: 1px solid #e3e8ef;
-      font-size: 0.95rem;
-    }
+        .hero-content {
+            max-width: 800px;
+            text-align: center;
+            padding: 2rem;
+            color: #ffffff;
+        }
 
-    .tagline i {
-      margin-right: 10px;
-      color: #2a4b7a;
-    }
+        .hero-title {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+            letter-spacing: -1px;
+        }
 
-    /* grid layout: two columns for main content */
-    .grid-2 {
-      display: grid;
-      grid-template-columns: 1.8fr 1fr;
-      gap: 2.5rem;
-      margin-top: 0.8rem;
-    }
+        .hero-subtitle {
+            font-size: 1.25rem;
+            margin-bottom: 2rem;
+            color: var(--sky-blue);
+        }
 
-    @media (max-width: 780px) {
-      .grid-2 {
-        grid-template-columns: 1fr;
-        gap: 1.8rem;
-      }
-    }
+        .cta-btn {
+            display: inline-block;
+            background-color: var(--warm-tan);
+            color: var(--dark-brown);
+            padding: 0.8rem 2rem;
+            text-decoration: none;
+            font-weight: bold;
+            border-radius: 4px;
+            transition: transform 0.2s, background-color 0.3s;
+        }
 
-    /* sections */
-    .section {
-      margin-bottom: 2.8rem;
-    }
+        .cta-btn:hover {
+            transform: translateY(-2px);
+            background-color: #e5a93b;
+        }
 
-    .section-title {
-      font-family: 'Merriweather', serif;
-      font-weight: 700;
-      font-size: 1.4rem;
-      letter-spacing: -0.3px;
-      color: #122233;
-      border-left: 5px solid #1f4b7a;
-      padding-left: 1rem;
-      margin-bottom: 1.4rem;
-    }
+        /* Main Content Preview Area */
+        .main-content {
+            max-width: 1200px;
+            margin: 4rem auto;
+            padding: 0 2rem;
+        }
 
-    .section-title i {
-      margin-right: 10px;
-      color: #1f4b7a;
-      font-size: 1.3rem;
-    }
-
-    .card {
-      background: #f9fafc;
-      border-radius: 18px;
-      padding: 1.4rem 1.8rem;
-      margin-bottom: 1.4rem;
-      border: 1px solid #eceff4;
-      transition: box-shadow 0.2s;
-    }
-
-    .card:hover {
-      box-shadow: 0 6px 14px rgba(0, 20, 40, 0.04);
-    }
-
-    .card p, .card li {
-      color: #1e2a3a;
-    }
-
-    .pub-item {
-      margin-bottom: 1.3rem;
-    }
-
-    .pub-item:last-child {
-      margin-bottom: 0;
-    }
-
-    .pub-title {
-      font-weight: 600;
-      font-size: 1.05rem;
-      color: #0a1d33;
-    }
-
-    .pub-venue {
-      font-weight: 400;
-      color: #3d5068;
-      font-size: 0.9rem;
-      margin-left: 6px;
-    }
-
-    .pub-meta {
-      font-size: 0.9rem;
-      color: #475b74;
-      display: flex;
-      flex-wrap: wrap;
-      gap: 0.8rem 1.5rem;
-      margin-top: 4px;
-    }
-
-    .pub-meta a {
-      color: #1f4b7a;
-      text-decoration: none;
-      font-weight: 500;
-      border-bottom: 1px dotted #b3c6db;
-    }
-
-    .pub-meta a:hover {
-      border-bottom: 1px solid #1f4b7a;
-    }
-
-    .research-interests {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 0.6rem 0.9rem;
-      margin: 0.8rem 0 0.2rem;
-    }
-
-    .interest-tag {
-      background: white;
-      border: 1px solid #d5dfe9;
-      padding: 0.25rem 1.2rem;
-      border-radius: 40px;
-      font-size: 0.85rem;
-      font-weight: 500;
-      color: #1d3650;
-      box-shadow: 0 1px 3px rgba(0,0,0,0.02);
-    }
-
-    .bio-text {
-      font-size: 1rem;
-      color: #1b2b3f;
-      margin-bottom: 0.8rem;
-    }
-
-    .bio-text i {
-      color: #1f4b7a;
-      margin-right: 4px;
-    }
-
-    /* right sidebar */
-    .sidebar-card {
-      background: #f5f8fd;
-      border-radius: 24px;
-      padding: 1.8rem 1.6rem;
-      border: 1px solid #e2eaf3;
-      margin-bottom: 2rem;
-    }
-
-    .sidebar-card .section-title {
-      border-left: 5px solid #456f9e;
-      font-size: 1.2rem;
-      margin-bottom: 1.2rem;
-    }
-
-    .info-line {
-      display: flex;
-      align-items: center;
-      gap: 12px;
-      margin-bottom: 1rem;
-      font-size: 0.95rem;
-    }
-
-    .info-line i {
-      width: 22px;
-      color: #1f4b7a;
-      font-size: 1.2rem;
-      text-align: center;
-    }
-
-    .info-line a {
-      color: #1d3d64;
-      text-decoration: none;
-      border-bottom: 1px dotted #b2c9e0;
-    }
-
-    .info-line a:hover {
-      border-bottom: 1px solid #1d3d64;
-    }
-
-    .divider {
-      border: 0;
-      height: 1px;
-      background: linear-gradient(to right, #d3dfec, transparent);
-      margin: 1.6rem 0;
-    }
-
-    .teaching-list {
-      list-style: none;
-      padding: 0;
-    }
-
-    .teaching-list li {
-      padding: 0.5rem 0;
-      border-bottom: 1px solid #e9eef5;
-      display: flex;
-      align-items: baseline;
-      gap: 10px;
-    }
-
-    .teaching-list li:last-child {
-      border-bottom: none;
-    }
-
-    .teaching-list .course-code {
-      font-weight: 600;
-      color: #1f3d60;
-      min-width: 70px;
-      font-size: 0.9rem;
-    }
-
-    .footer {
-      margin-top: 2.8rem;
-      padding-top: 1.8rem;
-      border-top: 1px solid #e3e9f2;
-      display: flex;
-      justify-content: space-between;
-      flex-wrap: wrap;
-      gap: 1rem;
-      font-size: 0.9rem;
-      color: #3e5670;
-    }
-
-    .footer i {
-      color: #3b5c7a;
-      margin: 0 4px;
-    }
-
-    .footer a {
-      color: #1f4b7a;
-      text-decoration: none;
-      border-bottom: 1px dotted #b5cbdf;
-    }
-
-    .footer a:hover {
-      border-bottom: 1px solid #1f4b7a;
-    }
-
-    /* small */
-    .text-muted {
-      color: #4c617c;
-      font-size: 0.9rem;
-    }
-
-    .mt-1 { margin-top: 0.5rem; }
-    .mb-1 { margin-bottom: 0.5rem; }
-  </style>
+        @media (max-width: 768px) {
+            .hero-title { font-size: 2rem; }
+            .nav-menu { gap: 1rem; }
+        }
+    </style>
 </head>
 <body>
 
-<div class="container">
-  
-  <!-- HEADER -->
-  <header class="header">
-    <div class="name-title">
-      <h1>Dr. Alex Rivera</h1>
-      <div class="badge"><i class="fas fa-flask" style="margin-right: 6px;"></i> Research Mathematician</div>
-      <div class="affiliation">
-        <i class="fas fa-university"></i> Institute for Advanced Mathematics ·  Department of Pure Mathematics
-      </div>
-    </div>
-    <div class="contact-links">
-      <a href="#"><i class="fas fa-envelope"></i> Email</a>
-      <a href="#"><i class="fab fa-google-scholar"></i> Scholar</a>
-      <a href="#"><i class="fab fa-github"></i> GitHub</a>
-      <a href="#"><i class="fab fa-orcid"></i> ORCID</a>
-    </div>
-  </header>
+    <!-- Navigation Header -->
+    <header>
+        <nav class="nav-container">
+            <a href="#" class="logo">Horizon<span>Design</span></a>
+            <ul class="nav-menu">
+                <li class="nav-item"><a href="#">Home</a></li>
+                <li class="nav-item"><a href="#">Portfolio</a></li>
+                <li class="nav-item"><a href="#">About</a></li>
+                <li class="nav-item"><a href="#">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
 
-  <!-- tagline -->
-  <div class="tagline">
-    <i class="fas fa-quote-left"></i> 
-    exploring the geometry of moduli spaces, algebraic cycles, and arithmetic structures
-  </div>
+    <!-- Main Image (Hero) Section -->
+    <main>
+        <section class="hero">
+            <!-- Replace the Unsplash URL with your actual image path -->
+            <img src="https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&w=1920&q=80" alt="Ocean coast blending with earthy sand" class="hero-image">
+            <div class="hero-overlay"></div>
+            
+            <div class="hero-content">
+                <h1 class="hero-title">Where Earth Meets Sky</h1>
+                <p class="hero-subtitle">A balanced fusion of deep coastal blues and organic, grounded earth tones.</p>
+                <a href="#" class="cta-btn">Explore Concept</a>
+            </div>
+        </section>
 
-  <!-- MAIN GRID -->
-  <div class="grid-2">
-    <!-- LEFT: main content -->
-    <div>
-      <!-- Bio -->
-      <section class="section">
-        <div class="section-title"><i class="fas fa-user-graduate"></i> About</div>
-        <div class="card">
-          <p class="bio-text">
-            <i class="fas fa-regular fa-circle-check" style="color:#1f4b7a;"></i> 
-            I am a research mathematician working at the intersection of algebraic geometry, number theory, and representation theory. 
-            My current focus lies in the cohomology of moduli spaces, enumerative geometry, and the arithmetic of Shimura varieties. 
-            I received my Ph.D. from <strong>Princeton University</strong> in 2020, advised by Prof. A. Smith, and held postdoctoral 
-            positions at the <strong>Max Planck Institute for Mathematics</strong> and <strong>University of Cambridge</strong>.
-          </p>
-          <p class="bio-text">
-            <i class="fas fa-regular fa-circle-check" style="color:#1f4b7a;"></i> 
-            I am passionate about bridging abstract theory with explicit computations, and I enjoy collaborating across disciplines.
-          </p>
-          <div class="research-interests">
-            <span class="interest-tag">Moduli spaces</span>
-            <span class="interest-tag">Hodge theory</span>
-            <span class="interest-tag">Arithmetic geometry</span>
-            <span class="interest-tag">Automorphic forms</span>
-            <span class="interest-tag">Enumerative geometry</span>
-          </div>
-        </div>
-      </section>
+        <!-- Placeholder for standard page text layout -->
+        <article class="main-content">
+            <h2>The Color Philosophy</h2>
+            <p style="margin-top: 1rem;">This layout pairs deep oceanic blues with warm, rich browns to establish a sense of modern stability. The navigation bar acts as a crisp frame using a solid dark blue base, while a custom CSS color gradient overlay ensures that any background image you place in the hero area cleanly blends into the palette automatically without sacrificing text readability.</p>
+        </article>
+    </main>
 
-      <!-- Publications -->
-      <section class="section">
-        <div class="section-title"><i class="fas fa-scroll"></i> Selected Publications</div>
-
-        <div class="pub-item">
-          <div class="pub-title">Intersection numbers on the moduli space of curves <span class="pub-venue">(2025)</span></div>
-          <div class="pub-meta">
-            <span><i class="fas fa-users"></i> Rivera, A. &amp; Tanaka, K.</span>
-            <span><i class="fas fa-book-open"></i> <em>J. Algebraic Geom.</em> 34, 211–258</span>
-            <span><a href="#"><i class="fas fa-file-pdf"></i> PDF</a></span>
-          </div>
-        </div>
-
-        <div class="pub-item">
-          <div class="pub-title">p-adic periods and crystalline cohomology <span class="pub-venue">(2024)</span></div>
-          <div class="pub-meta">
-            <span><i class="fas fa-user"></i> Rivera, A.</span>
-            <span><i class="fas fa-book-open"></i> <em>Ann. of Math.</em> 199, 1321–1390</span>
-            <span><a href="#"><i class="fas fa-file-pdf"></i> PDF</a></span>
-          </div>
-        </div>
-
-        <div class="pub-item">
-          <div class="pub-title">Modular embeddings and arithmetic of Shimura curves <span class="pub-venue">(2023)</span></div>
-          <div class="pub-meta">
-            <span><i class="fas fa-users"></i> Rivera, A., Dupont, L. &amp; Chen, Y.</span>
-            <span><i class="fas fa-book-open"></i> <em>Duke Math. J.</em> 172, 45–102</span>
-            <span><a href="#"><i class="fas fa-file-pdf"></i> PDF</a></span>
-            <span><a href="#"><i class="fab fa-github"></i> code</a></span>
-          </div>
-        </div>
-
-        <div class="pub-item">
-          <div class="pub-title">Tautological rings and the Euler characteristic <span class="pub-venue">(2022)</span></div>
-          <div class="pub-meta">
-            <span><i class="fas fa-user"></i> Rivera, A.</span>
-            <span><i class="fas fa-book-open"></i> <em>Compositio Math.</em> 158, 905–948</span>
-            <span><a href="#"><i class="fas fa-file-pdf"></i> PDF</a></span>
-          </div>
-        </div>
-        <div style="margin-top: 0.8rem; font-size: 0.9rem;">
-          <a href="#" style="color: #1f4b7a; font-weight: 500;"><i class="fas fa-arrow-right"></i> full list on arXiv &amp; Google Scholar</a>
-        </div>
-      </section>
-
-      <!-- Talks & events (small) -->
-      <section class="section">
-        <div class="section-title"><i class="fas fa-chalkboard-user"></i> Recent Talks</div>
-        <ul style="list-style: none; padding-left: 0.2rem;">
-          <li style="margin-bottom: 0.5rem; display: flex; gap: 10px;"><span style="min-width: 80px; font-weight: 500; color:#1e3a5f;">Jan 2026</span> <span>IHES, Paris — <em>“Cohomological methods in enumerative geometry”</em></span></li>
-          <li style="margin-bottom: 0.5rem; display: flex; gap: 10px;"><span style="min-width: 80px; font-weight: 500; color:#1e3a5f;">Nov 2025</span> <span>MSRI, Berkeley — <em>“Moduli of K3 surfaces”</em> (colloquium)</span></li>
-          <li style="display: flex; gap: 10px;"><span style="min-width: 80px; font-weight: 500; color:#1e3a5f;">Sep 2025</span> <span>ICM 2026 (invited session) — <em>“Arithmetic cycles”</em></span></li>
-        </ul>
-      </section>
-    </div>
-
-    <!-- RIGHT: sidebar -->
-    <div>
-      <!-- quick info -->
-      <div class="sidebar-card">
-        <div class="section-title"><i class="fas fa-address-card"></i> Contact &amp; Info</div>
-        <div class="info-line">
-          <i class="fas fa-map-pin"></i> <span>Institute for Advanced Math, <br/>Princeton, NJ 08540</span>
-        </div>
-        <div class="info-line">
-          <i class="fas fa-envelope"></i> <a href="mailto:alex.rivera@iam.edu">alex.rivera@iam.edu</a>
-        </div>
-        <div class="info-line">
-          <i class="fas fa-phone-alt"></i> +1 (609) 555‑0174
-        </div>
-        <div class="info-line">
-          <i class="fab fa-twitter"></i> <a href="#">@alex_math</a>
-        </div>
-        <hr class="divider" />
-        <div style="display: flex; gap: 1rem; flex-wrap: wrap; justify-content: flex-start;">
-          <span style="background: white; padding: 0.2rem 1rem; border-radius: 30px; border: 1px solid #d5dfe9; font-size:0.8rem;"><i class="fas fa-graduation-cap"></i> Ph.D. '20</span>
-          <span style="background: white; padding: 0.2rem 1rem; border-radius: 30px; border: 1px solid #d5dfe9; font-size:0.8rem;"><i class="fas fa-award"></i> Sloan Fellow '25</span>
-        </div>
-      </div>
-
-      <!-- Teaching -->
-      <div class="sidebar-card">
-        <div class="section-title"><i class="fas fa-chalkboard"></i> Teaching</div>
-        <ul class="teaching-list">
-          <li><span class="course-code">MATH 561</span> Algebraic Geometry II (Spring 2026)</li>
-          <li><span class="course-code">MATH 450</span> Topics in Number Theory (Fall 2025)</li>
-          <li><span class="course-code">MATH 202</span> Linear Algebra (adv. section)</li>
-        </ul>
-        <div style="margin-top: 0.8rem; font-size:0.9rem;">
-          <i class="fas fa-regular fa-calendar"></i> Office hours: Tue/Thu 2–4 PM (or by appointment)
-        </div>
-      </div>
-
-      <!-- Recent preprints / updates -->
-      <div class="sidebar-card">
-        <div class="section-title"><i class="fas fa-file-alt"></i> Recent preprints</div>
-        <ul style="list-style: none; padding: 0;">
-          <li style="margin-bottom: 0.9rem; border-bottom: 1px solid #e2eaf3; padding-bottom: 0.6rem;">
-            <span style="font-weight: 500;">Hodge classes on moduli of curves</span><br/>
-            <span class="text-muted">with M. Johnson, arXiv:2602.0012</span>
-          </li>
-          <li>
-            <span style="font-weight: 500;">The Euler characteristic of moduli of abelian varieties</span><br/>
-            <span class="text-muted">arXiv:2511.0483 (submitted)</span>
-          </li>
-        </ul>
-        <div style="margin-top: 0.6rem;">
-          <a href="#" style="color:#1f4b7a; font-weight: 500;"><i class="fas fa-arrow-right"></i> all preprints</a>
-        </div>
-      </div>
-
-    </div>
-  </div>
-
-  <!-- footer -->
-  <footer class="footer">
-    <span><i class="far fa-copyright"></i> 2026 Dr. Alex Rivera · built with <i class="fas fa-heart" style="color:#a02b3a;"></i> and <i class="fas fa-infinity"></i></span>
-    <span>
-      <a href="#"><i class="fab fa-github"></i> github</a> · 
-      <a href="#"><i class="fas fa-rss"></i> rss</a> · 
-      <a href="#"><i class="fas fa-arrow-up"></i> top</a>
-    </span>
-  </footer>
-
-</div>
 </body>
 </html>
