@@ -1,9 +1,10 @@
+```html
 <!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Dr. A. Matheson · Mathematics</title>
+  <title>Dr. A. Matheson · Freelance Mathematics</title>
   <!-- brown/earthy academic style, clean serif/sans-serif -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -104,6 +105,20 @@
     p, li, .normal-text {
       font-weight: 400;
       color: #2d241b;
+    }
+
+    /* freelance tag */
+    .freelance-tag {
+      background: #b39177;
+      color: #241a12;
+      font-weight: 600;
+      font-size: 0.9rem;
+      padding: 0.2rem 1.6rem;
+      border-radius: 40px;
+      display: inline-block;
+      letter-spacing: 0.03em;
+      margin-left: 0.5rem;
+      text-transform: uppercase;
     }
 
     /* research interests */
@@ -258,6 +273,42 @@
       gap: 0.3rem 0.5rem;
     }
 
+    /* freelance services / rates */
+    .services-box {
+      background: #e5d8c9;
+      padding: 1.2rem 2rem;
+      border-radius: 8px;
+      margin: 1.2rem 0 0.8rem 0;
+      border: 1px solid #cbb59e;
+    }
+
+    .services-box h3 {
+      margin-top: 0;
+      font-family: 'Libre Baskerville', serif;
+      color: #2b1e12;
+    }
+
+    .services-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr 1fr;
+      gap: 1rem;
+      margin-top: 0.5rem;
+    }
+
+    .service-item {
+      background: #f7f0e7;
+      padding: 0.6rem 1rem;
+      border-radius: 4px;
+      border-left: 3px solid #8f7055;
+      font-size: 0.95rem;
+    }
+
+    .service-item strong {
+      display: block;
+      font-weight: 600;
+      color: #2b1e12;
+    }
+
     /* contact & footer */
     .contact-simple {
       margin-top: 2.6rem;
@@ -308,6 +359,9 @@
       .tutorial-grid {
         grid-template-columns: 1fr;
       }
+      .services-grid {
+        grid-template-columns: 1fr 1fr;
+      }
       .pub-item {
         padding: 1rem 1.2rem;
       }
@@ -332,6 +386,9 @@
       .brown-header h1 {
         font-size: 1.8rem;
       }
+      .services-grid {
+        grid-template-columns: 1fr;
+      }
     }
   </style>
 </head>
@@ -343,8 +400,14 @@
     <h1>Dr. Alexander V. Matheson</h1>
     <div class="subhead">
       <span>PhD · Postdoctoral Researcher</span>
-      <span class="affiliation">Department of Mathematics · University of Cambridge</span>
+      <span class="affiliation">Freelance Mathematics <span class="freelance-tag">independent</span></span>
     </div>
+  </div>
+
+  <!-- freelance intro -->
+  <div style="background: #ede3d7; padding: 0.8rem 1.8rem; border-radius: 60px; margin-bottom: 1rem; display: inline-block; border: 1px solid #cbb59e;">
+    <span style="font-weight: 500;">🔹 available for</span> 
+    <span style="color: #2f1f12;">research collaboration · tutorial sessions · proofreading · consulting</span>
   </div>
 
   <!-- research interests -->
@@ -403,40 +466,76 @@
     </div>
   </section>
 
-  <!-- TEACHING / TUTORIALS -->
+  <!-- FREELANCE SERVICES / RATES -->
   <section>
-    <h2>📘 University Tutorials &amp; Teaching</h2>
-    <p style="margin-bottom: 1rem; color: #3d2f20; font-weight: 400;">
-      I offer advanced tutorials and problem sessions for undergraduate and master's level courses. 
-      Topics are tailored to the student's background and research interests.
+    <h2>🧑‍🏫 Freelance Tutorials &amp; Services</h2>
+    <p style="margin-bottom: 0.8rem; color: #3d2f20; font-weight: 400;">
+      I offer advanced tutorials, problem sessions, and research support for undergraduate, master's, and PhD level mathematics. 
+      As an independent academic, I work flexibly with students and researchers worldwide.
     </p>
+
+    <div class="services-box">
+      <h3>Services &amp; rates</h3>
+      <div class="services-grid">
+        <div class="service-item">
+          <strong>One-to-one tutorial</strong>
+          £85 / hour<br>
+          <span style="font-size: 0.85rem; color: #4f3a2a;">tailored to your course &amp; level</span>
+        </div>
+        <div class="service-item">
+          <strong>Reading course</strong>
+          £120 / hour<br>
+          <span style="font-size: 0.85rem; color: #4f3a2a;">research papers, monographs</span>
+        </div>
+        <div class="service-item">
+          <strong>Proofreading / editing</strong>
+          £65 / hour<br>
+          <span style="font-size: 0.85rem; color: #4f3a2a;">articles, theses, preprints</span>
+        </div>
+        <div class="service-item">
+          <strong>Problem seminar (group)</strong>
+          £180 / session<br>
+          <span style="font-size: 0.85rem; color: #4f3a2a;">up to 6 participants</span>
+        </div>
+        <div class="service-item">
+          <strong>Research consulting</strong>
+          £140 / hour<br>
+          <span style="font-size: 0.85rem; color: #4f3a2a;">collaboration, project advice</span>
+        </div>
+        <div class="service-item">
+          <strong>Dissertation supervision</strong>
+          £100 / hour<br>
+          <span style="font-size: 0.85rem; color: #4f3a2a;">undergraduate / master's</span>
+        </div>
+      </div>
+    </div>
 
     <div class="tutorial-grid">
       <div class="tutorial-card">
         <h4>Algebraic Number Theory</h4>
-        <div class="meta">Michaelmas term · 16 sessions · advanced</div>
+        <div class="meta">16 sessions · advanced</div>
         <div class="description">Dedekind domains, class groups, unit theorem, ramification, local fields, and an introduction to Iwasawa theory.</div>
         <div class="topics">
           <span class="topic-tag">ideals</span>
           <span class="topic-tag">discriminant</span>
           <span class="topic-tag">p-adic</span>
         </div>
-        <div class="offer-badge">tutorial available</div>
+        <div class="offer-badge">available</div>
       </div>
       <div class="tutorial-card">
         <h4>Modular Forms &amp; L-functions</h4>
-        <div class="meta">Lent term · 12 sessions · graduate level</div>
+        <div class="meta">12 sessions · graduate level</div>
         <div class="description">Elliptic modular forms, Hecke operators, Euler products, functional equation, and applications to arithmetic.</div>
         <div class="topics">
           <span class="topic-tag">modular curves</span>
           <span class="topic-tag">Hecke</span>
           <span class="topic-tag">L-values</span>
         </div>
-        <div class="offer-badge">tutorial available</div>
+        <div class="offer-badge">available</div>
       </div>
       <div class="tutorial-card">
         <h4>p-adic Hodge Theory (reading course)</h4>
-        <div class="meta">Easter term · 8 sessions · PhD level</div>
+        <div class="meta">8 sessions · PhD level</div>
         <div class="description">(φ,Γ)-modules, period rings, de Rham and crystalline representations, with a focus on applications to Selmer groups.</div>
         <div class="topics">
           <span class="topic-tag">(φ,Γ)</span>
@@ -457,23 +556,18 @@
         <div class="offer-badge">open for 2026</div>
       </div>
     </div>
-
-    <div style="margin: 1.5rem 0 0.2rem 0; background: #e3d7c9; padding: 0.7rem 1.8rem; border-radius: 60px; display: inline-block;">
-      <span style="font-weight: 500;">✎  one-to-one supervision</span> 
-      <span style="color: #392b1e; margin-left: 1rem;">available for dissertations, reading courses, and research projects.</span>
-    </div>
   </section>
 
   <!-- CONTACT -->
   <div class="contact-simple">
     <div>
       <span style="font-weight: 500;">📬 </span>
-      <a href="mailto:a.matheson@maths.cam.ac.uk">a.matheson@maths.cam.ac.uk</a>
-      <span style="margin-left: 1.5rem; color: #4d3a29;">office: C-312, CMS</span>
+      <a href="mailto:a.matheson@freelance.math">a.matheson@freelance.math</a>
+      <span style="margin-left: 1.5rem; color: #4d3a29;">⚡ flexible hours · GMT</span>
     </div>
     <div>
       <span style="background: #dccfc0; padding: 0.2rem 1.2rem; border-radius: 60px; font-size: 0.9rem; font-weight: 400;">
-        <span style="font-weight: 500;">office hours</span> Wed 14:00–16:00
+        <span style="font-weight: 500;">📅</span> book a free 20min consultation
       </span>
     </div>
   </div>
@@ -481,12 +575,14 @@
     <span><a href="#" style="color: #5b402d;">CV (pdf)</a></span>
     <span><a href="#" style="color: #5b402d;">Research statement</a></span>
     <span><a href="#" style="color: #5b402d;">Teaching portfolio</a></span>
+    <span><a href="#" style="color: #5b402d;">Testimonials</a></span>
   </div>
 
   <div class="footer-note">
-    updated March 2026 · serious mathematics
+    updated March 2026 · independent academic
   </div>
 
 </div>
 </body>
 </html>
+```
