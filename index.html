@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Dr. A. Matheson · Freelance Mathematics</title>
+  <title>Dr. A. Matheson · Mathematics</title>
   <style>
     * {
       margin: 0;
@@ -14,48 +14,47 @@
     body {
       background: #4a3a2c;
       font-family: 'Georgia', 'Times New Roman', serif;
-      line-height: 1.6;
+      line-height: 1.5;
       padding: 1.5rem 1rem;
       color: #1f1a14;
     }
 
     .container {
-      max-width: 960px;
+      max-width: 900px;
       margin: 0 auto;
       background: #f5efe8;
       padding: 2rem 2rem;
-      border-radius: 6px;
-      box-shadow: 0 8px 20px rgba(0,0,0,0.2);
+      border-radius: 4px;
+      box-shadow: 0 6px 16px rgba(0,0,0,0.2);
       border: 1px solid #b7a187;
     }
 
     /* HEADER */
     .brown-header {
       background: #5e3f2b;
-      margin: -2rem -2rem 1.8rem -2rem;
-      padding: 1.8rem 2rem 1.4rem 2rem;
-      border-radius: 6px 6px 0 0;
+      margin: -2rem -2rem 1.5rem -2rem;
+      padding: 1.5rem 2rem 1.2rem 2rem;
+      border-radius: 4px 4px 0 0;
       color: #f7efe6;
       border-bottom: 3px solid #c9b097;
     }
 
     .brown-header h1 {
-      font-size: 2.4rem;
+      font-size: 2.2rem;
       font-weight: 700;
       color: #fcf6ed;
       margin-bottom: 0.1rem;
-      letter-spacing: -0.01em;
     }
 
     .brown-header .subhead {
-      font-size: 1.1rem;
+      font-size: 1rem;
       color: #e8dccc;
       display: flex;
       flex-wrap: wrap;
       justify-content: space-between;
       align-items: baseline;
       border-bottom: 1px solid #7d614a;
-      padding-bottom: 0.5rem;
+      padding-bottom: 0.4rem;
     }
 
     .brown-header .subhead span {
@@ -64,9 +63,9 @@
 
     .brown-header .affiliation {
       background: #3f2d1e;
-      padding: 0.15rem 1.2rem;
+      padding: 0.1rem 1.2rem;
       border-radius: 40px;
-      font-size: 0.9rem;
+      font-size: 0.85rem;
       color: #efe2d0;
     }
 
@@ -74,127 +73,97 @@
       background: #b39177;
       color: #241a12;
       font-weight: 600;
-      font-size: 0.8rem;
-      padding: 0.1rem 1.2rem;
+      font-size: 0.75rem;
+      padding: 0.05rem 1rem;
       border-radius: 40px;
       display: inline-block;
-      margin-left: 0.5rem;
+      margin-left: 0.4rem;
       text-transform: uppercase;
-      letter-spacing: 0.04em;
     }
 
     /* simple headings */
     h2 {
-      font-size: 1.6rem;
-      margin: 2rem 0 0.8rem 0;
+      font-size: 1.4rem;
+      margin: 1.5rem 0 0.6rem 0;
       border-bottom: 2px solid #cbb59e;
-      padding-bottom: 0.3rem;
+      padding-bottom: 0.2rem;
       color: #3b281c;
       font-weight: 700;
     }
 
-    h3 {
-      font-size: 1.1rem;
-      margin: 1.2rem 0 0.4rem 0;
-      color: #3f2d1e;
+    /* available & research – simple text */
+    .info-line {
+      margin: 0.2rem 0 0.6rem 0;
+      font-size: 0.95rem;
+      color: #2b1e12;
+    }
+
+    .info-line strong {
       font-weight: 700;
     }
 
-    /* research interests */
-    .research-interests {
-      background: #e7dbcd;
-      padding: 0.5rem 1.5rem;
-      border-radius: 40px;
-      display: inline-block;
-      margin: 0.2rem 0 0.8rem 0;
-      border-left: 4px solid #8b6d52;
-      font-size: 0.95rem;
-    }
-
-    .research-interests span {
-      font-weight: 600;
-      color: #2b1e12;
-      margin-right: 0.5rem;
-    }
-
-    /* available tag */
-    .available-box {
-      background: #ede3d7;
-      padding: 0.5rem 1.5rem;
-      border-radius: 40px;
-      display: inline-block;
-      margin-bottom: 0.8rem;
-      border: 1px solid #cbb59e;
-      font-size: 0.95rem;
-    }
-
-    .available-box span {
-      font-weight: 600;
-    }
-
-    /* publications - simple */
+    /* publications – minimal */
     .pub-item {
-      background: #f7f0e7;
-      padding: 0.9rem 1.4rem;
-      margin-bottom: 0.8rem;
-      border-left: 4px solid #8f7055;
-      border-radius: 2px;
+      padding: 0.6rem 0;
+      border-bottom: 1px solid #e0d5c8;
+    }
+
+    .pub-item:last-child {
+      border-bottom: none;
     }
 
     .pub-title {
       font-weight: 700;
-      font-size: 1.05rem;
+      font-size: 1rem;
       color: #291e14;
     }
 
     .pub-authors {
       font-style: italic;
       color: #3f3124;
-      font-size: 0.95rem;
+      font-size: 0.9rem;
     }
 
     .pub-journal {
-      display: inline-block;
-      background: #ddd0c0;
-      padding: 0.05rem 0.8rem;
-      border-radius: 30px;
       font-size: 0.85rem;
       color: #2f1f12;
-      margin-top: 0.1rem;
+      display: inline-block;
+      background: #ddd0c0;
+      padding: 0.05rem 0.7rem;
+      border-radius: 30px;
+      margin-top: 0.05rem;
     }
 
     .pub-meta {
-      margin-top: 0.3rem;
-      font-size: 0.85rem;
-      border-top: 1px dashed #cbb49d;
-      padding-top: 0.4rem;
+      font-size: 0.8rem;
       color: #3f2f20;
+      margin-top: 0.2rem;
     }
 
     .pub-meta a {
       color: #6a4c33;
       text-decoration: none;
       border-bottom: 1px dotted #b2967c;
-      margin-right: 0.8rem;
+      margin-right: 0.6rem;
     }
 
     .pub-meta a:hover {
       border-bottom: 1px solid #4f3623;
     }
 
-    /* services - simple grid */
+    /* services – minimal grid */
     .services-grid {
       display: grid;
       grid-template-columns: 1fr 1fr 1fr;
-      gap: 0.8rem;
-      margin: 0.8rem 0 1rem 0;
+      gap: 0.5rem;
+      margin: 0.5rem 0 0.5rem 0;
     }
 
     .service-item {
       background: #f7f0e7;
-      padding: 0.5rem 0.8rem;
+      padding: 0.4rem 0.8rem;
       border-left: 3px solid #8f7055;
-      font-size: 0.9rem;
+      font-size: 0.85rem;
     }
 
     .service-item strong {
@@ -203,77 +172,77 @@
       color: #2b1e12;
     }
 
-    /* tutorials - simple */
+    /* tutorials – minimal */
     .tutorial-grid {
       display: grid;
       grid-template-columns: 1fr 1fr;
-      gap: 1rem;
-      margin: 0.8rem 0 0.5rem 0;
+      gap: 0.8rem;
+      margin: 0.5rem 0 0.5rem 0;
     }
 
     .tutorial-card {
       background: #f2e9df;
-      padding: 0.9rem 1.2rem;
-      border-radius: 4px;
+      padding: 0.7rem 1rem;
+      border-radius: 3px;
       border: 1px solid #d2beab;
     }
 
     .tutorial-card h4 {
-      font-size: 1.05rem;
+      font-size: 1rem;
       color: #2f1f12;
       font-weight: 700;
-      margin-bottom: 0.1rem;
+      margin-bottom: 0.05rem;
     }
 
     .tutorial-card .meta {
-      font-size: 0.85rem;
+      font-size: 0.8rem;
       color: #4f3a2a;
-      margin-bottom: 0.2rem;
     }
 
     .tutorial-card .description {
-      font-size: 0.9rem;
+      font-size: 0.85rem;
       color: #2a1f16;
+      margin-top: 0.1rem;
     }
 
     .topic-tag {
       background: #dbcdbb;
-      padding: 0.05rem 0.7rem;
+      padding: 0.03rem 0.6rem;
       border-radius: 30px;
-      font-size: 0.65rem;
+      font-size: 0.6rem;
       text-transform: uppercase;
       letter-spacing: 0.04em;
       color: #2b1d12;
       display: inline-block;
-      margin-right: 0.2rem;
+      margin-right: 0.15rem;
       margin-top: 0.2rem;
     }
 
     .offer-badge {
       background: #6b4e38;
       color: #f2e7db;
-      font-size: 0.75rem;
-      padding: 0.05rem 0.9rem;
+      font-size: 0.7rem;
+      padding: 0.03rem 0.8rem;
       border-radius: 40px;
       display: inline-block;
-      margin-top: 0.4rem;
+      margin-top: 0.3rem;
       font-weight: 600;
     }
 
     .tutorial-card .topics {
-      margin-top: 0.3rem;
+      margin-top: 0.2rem;
     }
 
     /* contact */
     .contact-simple {
-      margin-top: 2rem;
-      padding-top: 1.2rem;
+      margin-top: 1.6rem;
+      padding-top: 1rem;
       border-top: 2px solid #d2beab;
       display: flex;
       flex-wrap: wrap;
       justify-content: space-between;
       align-items: center;
-      font-size: 0.9rem;
+      font-size: 0.85rem;
     }
 
     .contact-simple a {
@@ -287,20 +256,20 @@
     }
 
     .footer-note {
-      font-size: 0.75rem;
+      font-size: 0.7rem;
       color: #5c4b39;
-      margin-top: 0.6rem;
+      margin-top: 0.4rem;
       text-align: right;
     }
 
     /* responsive */
-    @media (max-width: 750px) {
+    @media (max-width: 700px) {
       .container {
         padding: 1.2rem 1rem;
       }
       .brown-header {
-        margin: -1.2rem -1rem 1.5rem -1rem;
-        padding: 1.4rem 1rem 1rem 1rem;
+        margin: -1.2rem -1rem 1.2rem -1rem;
+        padding: 1.2rem 1rem 0.8rem 1rem;
       }
       .brown-header h1 {
         font-size: 1.8rem;
@@ -308,7 +277,7 @@
       .subhead {
         flex-direction: column;
         align-items: flex-start;
-        gap: 0.3rem;
+        gap: 0.2rem;
       }
       .tutorial-grid {
         grid-template-columns: 1fr;
@@ -320,30 +289,20 @@
 
     @media (max-width: 480px) {
       body {
-        padding: 0.6rem 0.3rem;
+        padding: 0.5rem 0.2rem;
       }
       .container {
         padding: 0.8rem 0.6rem;
       }
       .brown-header {
-        margin: -0.8rem -0.6rem 1.2rem -0.6rem;
-        padding: 1rem 0.6rem 0.8rem 0.6rem;
+        margin: -0.8rem -0.6rem 1rem -0.6rem;
+        padding: 0.8rem 0.6rem 0.6rem 0.6rem;
       }
       .brown-header h1 {
-        font-size: 1.5rem;
+        font-size: 1.4rem;
       }
       .services-grid {
         grid-template-columns: 1fr;
-      }
-      .research-interests {
-        display: block;
-        border-radius: 30px;
-        padding: 0.4rem 1rem;
-      }
-      .available-box {
-        display: block;
-        border-radius: 30px;
-        padding: 0.4rem 1rem;
       }
     }
   </style>
@@ -361,13 +320,13 @@
   </div>
 
   <!-- available -->
-  <div class="available-box">
-    <span>🔹 available for:</span> tutorials · research collaboration · proofreading · consulting
+  <div class="info-line">
+    <strong>🔹 available:</strong> tutorials · research collaboration · proofreading · consulting
   </div>
 
   <!-- research -->
-  <div class="research-interests">
-    <span>📐 research:</span> arithmetic geometry · p-adic Hodge theory · automorphic forms · L-functions
+  <div class="info-line">
+    <strong>📐 research:</strong> arithmetic geometry · p-adic Hodge theory · automorphic forms · L-functions
   </div>
 
   <!-- PUBLICATIONS -->
@@ -417,7 +376,7 @@
     </div>
   </div>
 
-  <div style="margin-top: 0.3rem; font-size: 0.85rem; color: #4d3b2a;">
+  <div style="margin-top: 0.2rem; font-size: 0.8rem; color: #4d3b2a;">
     full list: <a href="#" style="color: #5b402d;">arXiv</a> · <a href="#" style="color: #5b402d;">MathSciNet</a> · <a href="#" style="color: #5b402d;">Google Scholar</a>
   </div>
 
@@ -425,30 +384,12 @@
   <h2>Services &amp; Rates</h2>
 
   <div class="services-grid">
-    <div class="service-item">
-      <strong>One-to-one tutorial</strong>
-      £85 / hour
-    </div>
-    <div class="service-item">
-      <strong>Reading course</strong>
-      £120 / hour
-    </div>
-    <div class="service-item">
-      <strong>Proofreading / editing</strong>
-      £65 / hour
-    </div>
-    <div class="service-item">
-      <strong>Group seminar</strong>
-      £180 / session
-    </div>
-    <div class="service-item">
-      <strong>Research consulting</strong>
-      £140 / hour
-    </div>
-    <div class="service-item">
-      <strong>Dissertation supervision</strong>
-      £100 / hour
-    </div>
+    <div class="service-item"><strong>One-to-one tutorial</strong> £85 / hour</div>
+    <div class="service-item"><strong>Reading course</strong> £120 / hour</div>
+    <div class="service-item"><strong>Proofreading / editing</strong> £65 / hour</div>
+    <div class="service-item"><strong>Group seminar</strong> £180 / session</div>
+    <div class="service-item"><strong>Research consulting</strong> £140 / hour</div>
+    <div class="service-item"><strong>Dissertation supervision</strong> £100 / hour</div>
   </div>
 
   <!-- TUTORIALS -->
@@ -509,16 +450,16 @@
     <div>
       <span style="font-weight: 600;">📬</span>
       <a href="mailto:a.matheson@freelance.math">a.matheson@freelance.math</a>
-      <span style="margin-left: 1.2rem; color: #4d3a29;">flexible hours · GMT</span>
+      <span style="margin-left: 1rem; color: #4d3a29;">flexible hours · GMT</span>
     </div>
     <div>
-      <span style="background: #dccfc0; padding: 0.15rem 1rem; border-radius: 40px; font-size: 0.85rem;">
+      <span style="background: #dccfc0; padding: 0.1rem 1rem; border-radius: 40px; font-size: 0.8rem;">
         <span style="font-weight: 600;">📅</span> free 20min consultation
       </span>
     </div>
   </div>
 
-  <div style="margin-top: 0.4rem; display: flex; gap: 1.2rem; flex-wrap: wrap; font-size: 0.85rem; color: #4b3826;">
+  <div style="margin-top: 0.3rem; display: flex; gap: 1rem; flex-wrap: wrap; font-size: 0.8rem; color: #4b3826;">
     <a href="#" style="color: #5b402d;">CV (pdf)</a>
     <a href="#" style="color: #5b402d;">Research statement</a>
     <a href="#" style="color: #5b402d;">Teaching portfolio</a>
